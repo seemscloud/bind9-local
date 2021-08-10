@@ -68,4 +68,9 @@ $TTL    604800
 1dns0   IN      A     10.10.10.10
 
 10.10   IN      PTR   1dns0.localdomain.
+
+190.10  IN      PTR   1ucd0.localdomain.
+190.11  IN      PTR   1ucd1.localdomain.
+190.12  IN      PTR   1ucd2.localdomain.
+190.13  IN      PTR   1ucd3.localdomain.
 ```
