@@ -1,11 +1,11 @@
 `named.conf.options`
 ```bash
+recursion yes;
+
 forwarders {
   8.8.8.8;
   8.8.4.4;
 };
-
-recursion yes;
 
 listen-on {
   any;
