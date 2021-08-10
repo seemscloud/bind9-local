@@ -229,37 +229,37 @@ zone "10.10.in-addr.arpa" {
 
 `db.localdomain`
 ```bash
-$TTL    604800
-@       IN      SOA     1dns0.localdomain. root.1dns0.localdomain. (
-                              2         ; Serial
-                         604800         ; Refresh
-                          86400         ; Retry
-                        2419200         ; Expire
-                         604800 )       ; Negative Cache TTL
+$TTL  604800
+@     IN  SOA 1dns0.localdomain.  root.1dns0.localdomain. (
+                              2   ; Serial
+                         604800   ; Refresh
+                          86400   ; Retry
+                        2419200   ; Expire
+                         604800 ) ; Negative Cache TTL
 
-@       IN  NS  1dns0.localdomain.
-@             IN  A       10.10.10.10
+@     IN  NS  1dns0.localdomain.
+@     IN  A       10.10.10.10
 
-1dns0   IN  A   10.10.10.10
+1dns0 IN  A   10.10.10.10
 
-1ucd0   IN  A   10.10.190.10
-1ucd1   IN  A   10.10.190.11
-1ucd2   IN  A   10.10.190.12
-1ucd3   IN  A   10.10.190.12
+1ucd0 IN  A   10.10.190.10
+1ucd1 IN  A   10.10.190.11
+1ucd2 IN  A   10.10.190.12
+1ucd3 IN  A   10.10.190.12
 ```
 
 `db.10.10`
 ```bash
 $TTL    604800
-@       IN      SOA     1dns0.localdomain. root.1dns0.localdomain. (
-                              1         ; Serial
-                         604800         ; Refresh
-                          86400         ; Retry
-                        2419200         ; Expire
-                         604800 )       ; Negative Cache TTL
+@       IN      SOA   1dns0.localdomain. root.1dns0.localdomain. (
+                              1   ; Serial
+                         604800   ; Refresh
+                          86400   ; Retry
+                        2419200   ; Expire
+                         604800 ) ; Negative Cache TTL
 
-@     IN  NS  1dns0.localdomain.
-1dns0 IN  A   10.10.10.10
+@       IN      NS    1dns0.localdomain.
+1dns0   IN      A     10.10.10.10
 
-10.10 IN  PTR 1dns0.localdomain.
+10.10   IN      PTR   1dns0.localdomain.
 ```
