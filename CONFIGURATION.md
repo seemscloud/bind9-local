@@ -1,8 +1,3 @@
-`named.conf`
-```bash
-include "/etc/bind/named.conf.custom-zones";
-```
-
 `named.conf.options`
 ```bash
 forwarders {
@@ -17,6 +12,11 @@ listen-on {
 };
 
 allow-query { any; };
+```
+
+`named.conf`
+```bash
+include "/etc/bind/named.conf.custom-zones";
 ```
 
 `named.conf.custom-zones`
