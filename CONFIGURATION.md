@@ -19,6 +19,7 @@ allow-query {
 `named.conf`
 ```bash
 include "/etc/bind/named.conf.custom-zones";
+include "/etc/bind/named.conf.logging";
 ```
 
 `named.conf.custom-zones`
@@ -34,6 +35,25 @@ zone "10.10.in-addr.arpa" {
 };
 ```
 
+`/etc/bind/named.conf.logging`
+```bash
+logging {
+  channel bind_log {
+    file "/var/log/bind/bind.log" versions 3 size 5m;
+    severity info;
+    print-category yes;
+    print-severity yes;
+    print-time yes;
+  };
+  category default { bind_log; };
+  category update { bind_log; };
+  category update-security { bind_log; };
+  category security { bind_log; };
+  category queries { bind_log; };
+  category lame-servers { null; };
+};
+```
+
 
 `db.localdomain`
 ```bash
@@ -43,7 +63,8 @@ $TTL    604800
              604800   ; Refresh
               86400   ; Retry
             2419200   ; Expire
-             604800 ) ; Negative Cache TTL
+             604800   ; Negative Cache TTL
+)
 
 @       IN      NS    1dns0.localdomain.
 @       IN      A     10.10.10.10
@@ -59,10 +80,11 @@ $TTL    604800
              604800   ; Refresh
               86400   ; Retry
             2419200   ; Expire
-             604800 ) ; Negative Cache TTL
+             604800   ; Negative Cache TTL
+)
 
 @       IN      NS    1dns0.localdomain.
-1dns0   IN      A     10.10.10.10
+@       IN      A     10.10.10.10
 
 10.10   IN      PTR   1dns0.localdomain.
 ```
