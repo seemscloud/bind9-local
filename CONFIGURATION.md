@@ -5,7 +5,7 @@ forwarders {
   8.8.4.4;
 };
 
-recursion no;
+recursion yes;
 
 listen-on {
   any;
