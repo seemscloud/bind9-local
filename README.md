@@ -213,6 +213,22 @@ ubuntu20        10.10.0.63
 1ucd9           10.10.190.19
 ```
 
+`named.conf.options`
+```bash
+forwarders {
+  8.8.8.8;
+  8.8.4.4;
+};
+
+recursion no;
+
+listen-on {
+  any;
+};
+
+allow-query { any; };
+```
+
 `named.conf.custom-zones`
 ```bash
 zone "localdomain" {
