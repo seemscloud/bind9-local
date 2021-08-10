@@ -1,3 +1,8 @@
+`named.conf`
+```bash
+include "/etc/bind/named.conf.custom-zones";
+```
+
 `named.conf.options`
 ```bash
 forwarders {
