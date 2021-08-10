@@ -1,18 +1,36 @@
 `named.conf.options`
 ```bash
-recursion yes;
+options {
+  directory "/var/cache/bind";
 
-forwarders {
-  8.8.8.8;
-  8.8.4.4;
-};
+  recursion yes;
+  querylog yes;
+  auth-nxdomain no;
+  dnssec-validation auto;
+  
+  forwarders {
+    8.8.8.8;
+  };
 
-listen-on {
-  any;
-};
+  listen-on-v6 port 53 {
+    any;
+  };
 
-allow-query {
-  any;
+  listen-on port 53 {
+    any;
+  };
+
+  allow-query {
+    any;
+  };
+
+  allow-recursion {
+    any;
+  };
+
+  allow-transfer {
+    none;
+  };
 };
 ```
 
