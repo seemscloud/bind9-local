@@ -11,7 +11,9 @@ listen-on {
   any;
 };
 
-allow-query { any; };
+allow-query {
+  any;
+};
 ```
 
 `named.conf`
