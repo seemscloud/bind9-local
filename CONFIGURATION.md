@@ -47,11 +47,6 @@ $TTL    604800
 @       IN      A     10.10.10.10
 
 1dns0   IN      A     10.10.10.10
-
-1ucd0   IN      A     10.10.190.10
-1ucd1   IN      A     10.10.190.11
-1ucd2   IN      A     10.10.190.12
-1ucd3   IN      A     10.10.190.12
 ```
 
 `db.10.10`
@@ -68,9 +63,4 @@ $TTL    604800
 1dns0   IN      A     10.10.10.10
 
 10.10   IN      PTR   1dns0.localdomain.
-
-190.10  IN      PTR   1ucd0.localdomain.
-190.11  IN      PTR   1ucd1.localdomain.
-190.12  IN      PTR   1ucd2.localdomain.
-190.13  IN      PTR   1ucd3.localdomain.
 ```
