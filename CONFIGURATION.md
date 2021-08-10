@@ -27,8 +27,8 @@ zone "localdomain" {
 };
 
 zone "10.10.in-addr.arpa" {
-        type master;
-        file "/etc/bind/db.10.10";
+  type master;
+  file "/etc/bind/db.10.10";
 };
 ```
 
