@@ -258,7 +258,7 @@ $TTL    604800
                         2419200         ; Expire
                          604800 )       ; Negative Cache TTL
 
-@           IN  NS  1dns0.localdomain.
+@     IN  NS  1dns0.localdomain.
 1dns0 IN  A   10.10.10.10
 
 10.10 IN  PTR 1dns0.localdomain.
