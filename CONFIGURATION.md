@@ -1,16 +1,22 @@
+`named.conf`
+```bash
+include "/etc/bind/named.conf.custom-zones";
+include "/etc/bind/named.conf.logging";
+```
+
 `named.conf.options`
 ```bash
 options {
   directory "/var/cache/bind";
 
+  forwarders {
+    8.8.8.8;
+  };
+
   recursion yes;
   querylog yes;
   auth-nxdomain no;
   dnssec-validation auto;
-  
-  forwarders {
-    8.8.8.8;
-  };
 
   listen-on-v6 port 53 {
     any;
@@ -32,12 +38,6 @@ options {
     none;
   };
 };
-```
-
-`named.conf`
-```bash
-include "/etc/bind/named.conf.custom-zones";
-include "/etc/bind/named.conf.logging";
 ```
 
 `named.conf.custom-zones`
@@ -63,12 +63,30 @@ logging {
     print-severity yes;
     print-time yes;
   };
-  category default { bind_log; };
-  category update { bind_log; };
-  category update-security { bind_log; };
-  category security { bind_log; };
-  category queries { bind_log; };
-  category lame-servers { null; };
+
+  category default {
+    bind_log;
+  };
+
+  category update {
+    bind_log;
+  };
+
+  category update-security {
+    bind_log;
+  };
+
+  category security {
+    bind_log;
+  };
+
+  category queries {
+    bind_log;
+  };
+
+  category lame-servers {
+    null;
+  };
 };
 ```
 
