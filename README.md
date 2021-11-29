@@ -189,6 +189,24 @@ EndOfMessage
 ```
 
 ```bash
+cat > reverse/db.10.10 << "EndOfMessage"
+$TTL        604800
+@                        IN    SOA    1dns0.seems.local. root.1dns0.seems.local. (
+        2021112823    ;  Serial
+            604800    ;  Refresh
+             86400    ;  Retry
+           2419200    ;  Expire
+            604800    ;  Negative Cache TTL
+)
+
+@                        IN    NS     1dns0.seems.local.
+@                        IN    A      10.10.10.10
+
+10.10   IN      PTR   1dns0.seems.local.
+EndOfMessage
+```
+
+```bash
 cat > reverse/db.0 << "EndOfMessage"
 $TTL        604800
 @                        IN    SOA    localhost. root.localhost. (
@@ -231,23 +249,5 @@ $TTL        604800
 )
 
 @                        IN    NS     localhost.
-EndOfMessage
-```
-
-```bash
-cat > reverse/db.10.10 << "EndOfMessage"
-$TTL        604800
-@                        IN    SOA    1dns0.seems.local. root.1dns0.seems.local. (
-        2021112823    ;  Serial
-            604800    ;  Refresh
-             86400    ;  Retry
-           2419200    ;  Expire
-            604800    ;  Negative Cache TTL
-)
-
-@                        IN    NS     1dns0.seems.local.
-@                        IN    A      10.10.10.10
-
-10.10   IN      PTR   1dns0.seems.local.
 EndOfMessage
 ```
