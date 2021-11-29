@@ -12,6 +12,7 @@ include "/etc/bind/named.conf.options";
 include "/etc/bind/named.conf.default-zones";
 include "/etc/bind/named.conf.custom-zones";
 include "/etc/bind/named.conf.logging";
+include "/etc/bind/named.conf.rndc";
 EndOfMessage
 ```
 
