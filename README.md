@@ -3,16 +3,14 @@ mkdir -p {forward,reverse}
 ```
 
 ```bash
-rndc-confgen | grep -E "^key \"rndc-key\" {" -A 3 > rndc.key
-```
-
-```bash
 cat > named.conf << "EndOfMessage"
 include "/etc/bind/named.conf.options";
+include "/etc/bind/named.conf.local";
 include "/etc/bind/named.conf.default-zones";
 include "/etc/bind/named.conf.custom-zones";
-include "/etc/bind/named.conf.logging";
+
 include "/etc/bind/named.conf.rndc";
+include "/etc/bind/named.conf.logging";
 EndOfMessage
 ```
 
